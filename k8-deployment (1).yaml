@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: k8-deployment
+  name: k8-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: k8-deployment
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: k8-deployment
+        run: k8-service
+    spec:
+      containers:
+      - image: kcochra7/nginx8080:latest
+        name: nginx8080
+        resources: {}
+status: {}

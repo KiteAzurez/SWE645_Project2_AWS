@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Survey Form</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+ body {
+ 	margin:0;
+    padding:0;
+ 	text-align:center;
+	
+    justify-content: flex-start;
+    align-items: flex-start;
+
+
+
+  }
+  input {
+  	padding: 3px;
+    border: none;
+    border-radius:5px;
+  }
+  input[type="checkbox"]{
+  	background-color:yellow;
+
+  }
+  select{
+  padding: 3px;
+  border: none;
+  border-radius:5px;
+}
+  
+ form {
+ 	max-width: 1500px;
+    text-align: center;
+    padding: 20px;
+    border: 3px solid black;
+    border-radius: 10px;
+    
+ }
+ .input-element{
+ margin: 10px;
+ display: flex;
+ flex-direction: column;
+}
+</style>
+</head>
+<body class="w3-purple">
+<h1 id= "title"> Student Survey Form Made With Jenkins</h1>
+<p id="description"> Made by Kevin C. </p>
+
+<form id="form">
+	<div class="input-element">
+    <label>
+    	First Name
+    </label>
+    	<input id ="Fname" placeholder="Jane"  type="text" required/>
+    </div>
+	<div class="input-element">
+    <label>
+    	Last Name
+    </label>
+    	<input id ="Lname" placeholder="Doe"  type="text" required/>
+    </div>
+    <div class="input-element">
+    <label>
+    	Street Address
+    </label>
+    	<input id ="address" placeholder="91-1205 Renton Rd"  type="text" required/>
+    </div>
+	<div class="input-element">
+    <label>
+    	City
+    </label>
+    	<input placeholder="Ewa Beach" id ="city" type="text" required/>
+    </div>
+    <div class="input-element">
+    <label>
+    	State
+    </label>
+    	<input placeholder="Hawaii" id ="state" type="text" required/>
+    </div>
+    <div class="input-element">
+    <label>
+    	Zip Code
+    </label>
+    	<input id ="zip" placeholder="92706"  type="int" required/>
+    </div>
+	<div class="input-element">
+    <label for="tele">
+    	Telephone Number
+    </label>
+    	<input id ="tele" 
+        type="tel"
+        placeholder="123-456-7890" 
+        required 
+        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
+        <span class="validity"></span>
+    </div>
+    	<div class="input-element">
+    <label>
+    	Email
+    </label>
+    	<input id ="email" type="email" placeholder="email@email.com"  required/>
+    </div>
+  <div>
+    	<label>Please check what you liked most about George Mason</label>
+
+  <div class="input-element">    	
+          <label><input type="checkbox" value = "student" name="name"/>Students</label>
+  </div>
+  <div>
+          <label><input type="checkbox" value = "location" name="name"/>Location</label>
+
+  <div class="input-element">
+  <label><input type="checkbox" value="Campus" name="name"/>Campus</label>
+  </div>
+  <div class="input-element">
+          <label><input type="checkbox" value="atmosphere" name="name"/>Atmosphere</label>
+      </div>
+   <div class="input-element">
+          <label><input type="checkbox" value="dorms" name="name"/>Dorm Rooms</label>
+      </div>
+   <div class="input-element">
+          <label><input type="checkbox" value="sports" name="name"/>Sports</label>
+      </div>
+      </div>
+    <div >
+    	<label>How did you become interested in George Mason?</label>
+
+  <div class="input-element">    	
+          <label><input type="radio" name="name"/>Friend</label>
+  </div>
+  <div class="input-element">
+          <label><input type="radio" name="name"/>Television</label>
+
+  <div class="input-element">
+  <label><input type="radio" name="name"/>Internet</label>
+  </div>
+  <div class="input-element">
+          <label><input type="radio" name="name"/>Other</label>
+      </div>
+      </div>
+    <div class="input-element">
+    <label id = "select-label">
+    	How likely are you to recommend George Mason to another person?
+    </label>
+    	<select id="dropdown" >
+        	<option>Very Likely</option>
+            <option>Likely</option>
+            <option>Unlikely</option>
+        </select>
+    </div>
+	<div class="input-element">
+    <label for="raffle">
+    	Please enter 10 numbers from 1-100, with commas seperating to enter the raffle!
+		(Example: 1,2,3,4,5,6,7,8,9,10)
+    </label>
+    	<input id ="raffle" 
+        type="raffle"
+        placeholder="1,2,3,4,5,6,7,8,9,10" 
+        required 
+        pattern="^([1-9]|[1-9][0-9]|100)(,([1-9]|[1-9][0-9]|100)){9}$"/>
+        <span class="validity"></span>
+    </div>
+    <div class="input-element">
+    	<label>Additional Comments</label>
+    	<textarea type="text"></textarea>
+    </div>
+    <div>
+	<button type="submit" id="submit" onclick="submitFunc()"> Submit </button>
+	<button type="reset" id="reset"> Cancel</button>
+	</div>
+    <script>
+	function submitFunc() {
+	confirm("Are you sure you want to submit?");
+}
+</script>
+</body>
+</form>
